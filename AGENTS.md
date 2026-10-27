@@ -64,5 +64,11 @@ ele é pequeno, estático e feito para trocar de mão, então tudo que entra aqu
 viaja junto para sempre.
 
 `.claude/settings.local.json` é pessoal de cada máquina e também fica de fora.
-Já `CLAUDE.md` e `.claude/skills/` são para compartilhar — é o que faz o projeto
+Já `AGENTS.md` e `.claude/skills/` são para compartilhar — é o que faz o projeto
 ser entendido do mesmo jeito por quem chegar depois.
+
+⚠ **Este repositório é público.** Então o que entra em `.claude/skills/` aqui é só
+o que diz respeito a esta página. O método da casa — nomenclatura, abertura de
+cliente, padrões de trabalho — mora no repositório `contexto`, que é privado.
+Regra da casa escrita aqui fica legível por qualquer pessoa, e fechar o
+repositório depois não apaga o que já foi lido ou clonado.
