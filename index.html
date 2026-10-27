@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>APEX | Marca Pessoal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    * { font-family: 'Inter', sans-serif; }
+    body { background: #0A0A0A; color: #fff; }
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-track { background: #0A0A0A; }
+    ::-webkit-scrollbar-thumb { background: #E79E14; border-radius: 2px; }
+
+    .el-yellow { color: #E79E14; }
+    .bg-el-yellow { background: #E79E14; }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .fade-up { animation: fadeUp 0.6s ease both; }
+    .delay-1 { animation-delay: 0.1s; }
+    .delay-2 { animation-delay: 0.2s; }
+    .delay-3 { animation-delay: 0.3s; }
+    .delay-4 { animation-delay: 0.4s; }
+
+    .unit-card {
+      background: #111111;
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 24px;
+      transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    }
+    .unit-card:hover {
+      border-color: rgba(231,158,20,0.4);
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    }
+
+    .btn-cta {
+      background: #E79E14;
+      color: #0A0A0A;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      border-radius: 10px;
+      padding: 16px 32px;
+      display: inline-block;
+      text-align: center;
+      transition: background 0.2s, transform 0.1s;
+    }
+    .btn-cta:hover {
+      background: #fbbf24;
+      transform: scale(1.02);
+    }
+    .btn-cta:active { transform: scale(0.98); }
+
+    .number-badge {
+      width: 36px;
+      height: 36px;
+      background: rgba(231,158,20,0.12);
+      border: 1px solid rgba(231,158,20,0.3);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: 900;
+      color: #E79E14;
+      flex-shrink: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <div data-module="sections/hero.html"></div>
+  <div data-module="sections/sobre.html"></div>
+  <div data-module="sections/conexao.html"></div>
+  <div data-module="sections/manifesto.html"></div>
+  <div data-module="sections/servicos.html"></div>
+  <div data-module="sections/digital-pr.html"></div>
+  <div data-module="sections/diferenciais.html"></div>
+  <div data-module="sections/metodologia.html"></div>
+  <div data-module="sections/contato.html"></div>
+
+  <script>
+    document.querySelectorAll('[data-module]').forEach(async (el) => {
+      const res = await fetch(el.dataset.module);
+      el.outerHTML = await res.text();
+    });
+  </script>
+
+</body>
+</html>
